@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Book</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS -->
+</head>
+<body>
+    <div class="container">
+        <h1>Recipe Book</h1>
+        
+        <!-- Search Bar -->
+        <div class="search-bar">
+            <input type="text" id="search-input" placeholder="Search for recipes..." oninput="filterRecipes()">
+        </div>
+
+        <!-- Recipe Form -->
+        <div class="recipe-form">
+            <h2>Add a New Recipe</h2>
+            <input type="text" id="recipe-title" placeholder="Recipe Title" required />
+            <textarea id="recipe-ingredients" rows="5" placeholder="Ingredients" required></textarea>
+            <textarea id="recipe-instructions" rows="5" placeholder="Instructions" required></textarea>
+            <select id="recipe-category">
+                <option value="Breakfast">Breakfast</option>
+                <option value="Lunch">Lunch</option>
+                <option value="Dinner">Dinner</option>
+                <option value="Dessert">Dessert</option>
+            </select>
+            <button id="add-recipe-btn">Add Recipe</button>
+        </div>
+        
+        <!-- Recipe List -->
+        <div class="recipe-list">
+            <h2>Recipe List</h2>
+            <div id="recipe-list-container"></div>
+        </div>
+        
+        <!-- Recipe Details -->
+        <div class="recipe-details" id="recipe-details">
+            <h2 id="recipe-detail-title"></h2>
+            <h3>Category: <span id="recipe-detail-category"></span></h3>
+            <h3>Ingredients</h3>
+            <p id="recipe-detail-ingredients"></p>
+            <h3>Instructions</h3>
+            <p id="recipe-detail-instructions"></p>
+            <button onclick="closeDetails()">Close</button>
+            <button onclick="editRecipe()">Edit</button>
+        </div>
+    </div>
+    <script src="script.js"></script> <!-- Link to external JavaScript -->
+</body>
+</html>
